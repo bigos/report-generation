@@ -17,10 +17,18 @@
 
 ; request-example
 (defn request-example [req]
-  {:status  200
-   :headers {"Content-Type" "text/html"}
-   :body   (html [:p {:style "margin: 2em; background: #ccc;"}
-                  (str "Request Object: " req)])})
+  (let [rkeys (keys req)
+        dat (map (fn [e]
+                   [:p [:span {:style "color: red"} (str(key e) " ")]
+                    (val e)])
+                 req)]
+    {:status  200
+     :headers {"Content-Type" "text/html"}
+     :body   (html [:div
+                    [:p {:style "margin: 2em; background: #ccc;"}
+                     (str "Request Object: " req)]
+                    dat
+                    ])}))
 
 (defroutes app-routes
   (GET "/" [] simple-body-page)
