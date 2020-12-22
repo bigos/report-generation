@@ -8,11 +8,6 @@
             [clojure.data.json :as json])
   (:gen-class))
 
-(defroutes app-routes
-  (GET "/" [] simple-body-page)
-  (GET "/request" [] request-example)
-  (route/not-found "Error, page not found!"))
-
 ; Simple Body Page
 (defn simple-body-page [req]
   {:status  200
