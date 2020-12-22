@@ -1,3 +1,7 @@
 * Notes
 
   https://medium.com/swlh/building-a-rest-api-in-clojure-3a1e1ae096e
+
+  https://clojure.org/community/libraries
+
+  https://clojars.org/

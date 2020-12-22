@@ -1,14 +1,23 @@
 {:paths ["src" "resources"]
- :deps {org.clojure/clojure {:mvn/version "1.10.1"}}
+ :deps  {org.clojure/clojure {:mvn/version "1.10.1"}
+         ;; A basic routing library
+         compojure/compojure {:mvn/version "1.6.2"}
+         ;; Our Http library for client/server
+         http-kit/http-kit   {:mvn/version "2.5.0"}
+         ;; library for query params
+         ring/ring-defaults  {:mvn/version "0.3.2"}
+         ;; Clojure data.JSON library
+         org.clojure/data.json {:mvn/version "0.2.6"}
+         }
  :aliases
- {:test {:extra-paths ["test"]
-         :extra-deps {org.clojure/test.check {:mvn/version "1.0.0"}}}
+ {:test    {:extra-paths ["test"]
+            :extra-deps  {org.clojure/test.check {:mvn/version "1.0.0"}}}
   :runner
   {:extra-deps {com.cognitect/test-runner
                 {:git/url "https://github.com/cognitect-labs/test-runner"
-                 :sha "b6b3193fcc42659d7e46ecd1884a228993441182"}}
-   :main-opts ["-m" "cognitect.test-runner"
+                 :sha     "b6b3193fcc42659d7e46ecd1884a228993441182"}}
+   :main-opts  ["-m" "cognitect.test-runner"
                "-d" "test"]}
   :uberjar {:extra-deps {seancorfield/depstar {:mvn/version "1.1.128"}}
-            :main-opts ["-m" "hf.depstar.uberjar" "report-generation.jar"
+            :main-opts  ["-m" "hf.depstar.uberjar" "report-generation.jar"
                         "-C" "-m" "cls.report-generation"]}}}
