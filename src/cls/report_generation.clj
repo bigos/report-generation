@@ -1,5 +1,6 @@
 (ns cls.report-generation
   (:require [org.httpkit.server :as server]
+            [hiccup.core :refer [html]]
             [compojure.core :refer :all]
             [compojure.route :as route]
             [ring.middleware.defaults :refer :all]
@@ -16,11 +17,10 @@
 
 ; request-example
 (defn request-example [req]
-     {:status  200
-      :headers {"Content-Type" "text/html"}
-      :body    (->>
-                (pp/pprint req)
-                (str "Request Object: " req))})
+  {:status  200
+   :headers {"Content-Type" "text/html"}
+   :body   (html [:p {:style "margin: 2em; background: #ccc;"}
+                  (str "Request Object: " req)])})
 
 (defroutes app-routes
   (GET "/" [] simple-body-page)

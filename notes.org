@@ -14,3 +14,19 @@
    #+begin_example
    clj -M -m cls.report-generation
    #+end_example
+
+** libraries
+
+   https://github.com/weavejester/hiccup
+
+   https://github.com/yokolet/hiccup-samples
+
+   https://tailwindcss.com/
+
+** cookbook
+
+   https://github.com/clojure-cookbook/clojure-cookbook
+
+
+*** hiccup
+    https://github.com/clojure-cookbook/clojure-cookbook/blob/master/07_webapps/7-13_templating-with-hiccup.asciidoc
