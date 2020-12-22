@@ -1,7 +1,16 @@
 * Notes
 
-  https://medium.com/swlh/building-a-rest-api-in-clojure-3a1e1ae096e
+** links
+   https://medium.com/swlh/building-a-rest-api-in-clojure-3a1e1ae096e
 
-  https://clojure.org/community/libraries
+   https://clojure.org/community/libraries
 
-  https://clojars.org/
+   https://clojars.org/
+
+** running it
+
+   Unconfirmed way of running main
+
+   #+begin_example
+   clj -M -m cls.report-generation
+   #+end_example
