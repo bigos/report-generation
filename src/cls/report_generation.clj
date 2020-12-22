@@ -27,6 +27,11 @@
                 (pp/pprint req)
                 (str "Request Object: " req))})
 
+(defroutes app-routes
+  (GET "/" [] simple-body-page)
+  (GET "/request" [] request-example)
+  (route/not-found "Error, page not found!"))
+
 (defn -main
   "This is our main entry point"
   [& args]
