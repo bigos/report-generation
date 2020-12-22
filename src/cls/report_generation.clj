@@ -25,9 +25,11 @@
     {:status  200
      :headers {"Content-Type" "text/html"}
      :body   (html [:div
-                    [:p {:style "margin: 2em; background: #ccc;"}
+                    [:p {:style "margin: 1em; padding: 1em; background: #cfc;"}
                      (str "Request Object: " req)]
-                    dat
+                    [:div
+                     {:style "padding: 1em; background: yellow; margin: 1em; padding: 1em;"}
+                     dat]
                     ])}))
 
 (defroutes app-routes
