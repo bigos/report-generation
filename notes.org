@@ -9,14 +9,22 @@
 
 ** running it
 
-   #+begin_example
+
+*** terminal
+    #+begin_example
    clj -M -m cls.report-generation
-   #+end_example
-   restart the above command and reload the page
+    #+end_example
+    restart the above command and reload the page
 
-   and visit
-   http://localhost:3000/
+    and visit
+    http://localhost:3000/
 
+*** REPL
+    switch to the name space
+    (-main)
+    http://localhost:3000/
+    reload code => C-c M-z
+    reload page
 
 ** libraries
 
