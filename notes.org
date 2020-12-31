@@ -21,9 +21,13 @@
 
 *** REPL
     switch to the name space
+
     (-main)
+
     http://localhost:3000/
+
     reload code => C-c M-z
+
     reload page
 
 ** libraries
@@ -33,6 +37,12 @@
    https://github.com/yokolet/hiccup-samples
 
    https://tailwindcss.com/
+
+   https://github.com/ring-clojure/ring/wiki
+
+   http://clojure-liberator.github.io/liberator/
+
+   https://luminusweb.com/
 
 ** cookbook
 
