@@ -40,11 +40,13 @@
 
    https://github.com/ring-clojure/ring/wiki
 
-   http://clojure-liberator.github.io/liberator/
+*** also consider
 
-   https://luminusweb.com/
+    http://clojure-liberator.github.io/liberator/
 
-   http://pedestal.io/
+    https://luminusweb.com/
+
+    http://pedestal.io/
 
 ** cookbook
 
