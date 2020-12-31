@@ -20,7 +20,14 @@
     http://localhost:3000/
 
 *** REPL
-    switch to the name space
+
+    M-x cider-jack-in
+
+    open a file in /src/ folder and ...
+    C-c M-n r
+
+    in REPL
+    C-c M-n and select the name space
 
     (-main)
 
