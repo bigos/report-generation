@@ -13,11 +13,15 @@
 (defn simple-body-page [req]
   {:status  200
    :headers {"Content-Type" "text/html"}
-   :body    (html [:p "Hello World"]
-                  [:p [:a {:href (str "/request")}
-                       "request"]]
-                  [:p [:a {:href (str "/request?foo=bar&num=123")}
-                       "request with parameters"]])})
+   :body    (html [:html
+                   [:head
+                    [:title "hello everyone"]]
+                   [:body
+                    [:p "Hello World"]
+                    [:p [:a {:href (str "/request")}
+                         "request"]]
+                    [:p [:a {:href (str "/request?foo=bar&num=123")}
+                         "request with parameters"]]]])})
 
 ; request-example
 (defn request-example [req]
@@ -28,13 +32,18 @@
                  req)]
     {:status  200
      :headers {"Content-Type" "text/html"}
-     :body   (html [:div
-                    [:p {:style "margin: 1em; padding: 1em; background: #cfc;"}
-                     (str "Request Object: " req)]
-                    [:div
-                     {:style "padding: 1em; background: yellow; margin: 1em; padding: 1em;"}
-                     dat]
-                    ])}))
+     :body   (html
+              [:html
+               [:head
+                [:title "hello"]]
+               [:body
+                [:div
+                 [:p {:style "margin: 1em; padding: 1em; background: #cfc;"}
+                  (str "Request Object: " req)]
+                 [:div
+                  {:style "padding: 1em; background: yellow; margin: 1em; padding: 1em;"}
+                  dat]
+                 ]]])}))
 
 (defroutes app-routes
   (GET "/" [] simple-body-page)
