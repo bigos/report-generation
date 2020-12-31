@@ -32,6 +32,8 @@
 
 ** libraries
 
+   https://github.com/weavejester/compojure
+
    https://github.com/weavejester/hiccup
 
    https://github.com/yokolet/hiccup-samples
