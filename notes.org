@@ -46,6 +46,8 @@
 
     https://www.clojure-toolbox.com/
 
+    https://github.com/clojure-emacs/clj-refactor.el
+
     http://clojure-liberator.github.io/liberator/
 
     https://luminusweb.com/
