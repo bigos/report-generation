@@ -10,7 +10,8 @@
          org.clojure/data.json {:mvn/version "0.2.6"}
          ;; tailwindcss + hiccup = css + html
          rgm/tailwind-hiccup {:mvn/version "0.2.0"}
-         }
+         ;; xml parsing
+         org.clojure/data.xml {:mvn/version "0.2.0-alpha6"}}
  :aliases
  {:test    {:extra-paths ["test"]
             :extra-deps  {org.clojure/test.check {:mvn/version "1.0.0"}}}

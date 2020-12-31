@@ -6,10 +6,10 @@
             [ring.middleware.defaults :refer :all]
             [clojure.pprint :as pp]
             [clojure.string :as str]
-            [clojure.data.json :as json])
+            [clojure.data.json :as json]
+            [clojure.data.xml :refer :all])
   (:gen-class))
 
-; Simple Body Page
 (defn simple-body-page [req]
   {:status  200
    :headers {"Content-Type" "text/html"}
@@ -18,12 +18,14 @@
                     [:title "hello everyone"]]
                    [:body
                     [:p "Hello World"]
+                    [:p [:a {:href (str "/read-xml?file=123")}
+                         "open xml file number"]]
+
                     [:p [:a {:href (str "/request")}
                          "request"]]
                     [:p [:a {:href (str "/request?foo=bar&num=123")}
                          "request with parameters"]]]])})
 
-; request-example
 (defn request-example [req]
   (let [rkeys (keys req)
         dat (map (fn [e]
@@ -45,9 +47,21 @@
                   dat]
                  ]]])}))
 
+(defn read-xml [req]
+  (let [params (get req :params)
+        xml-path  "/home/jacek/Desktop/LidlReports"
+        xml-file (clojure.string/join [xml-path "/" (get params :file)])
+        ]
+    {:status  200
+     :headers {"Content-Type" "text/html"}
+     :body    (html
+               [:p "xml parsing will go here "]
+               [:pre (str (parse-str (slurp xml-file)))])}))
+
 (defroutes app-routes
   (GET "/" [] simple-body-page)
   (GET "/request" [] request-example)
+  (GET "/read-xml" [] read-xml)
   (route/not-found "Error, page not found!"))
 
 (defn -main
