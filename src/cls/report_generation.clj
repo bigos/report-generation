@@ -15,7 +15,9 @@
    :headers {"Content-Type" "text/html"}
    :body    (html [:p "Hello World"]
                   [:p [:a {:href (str "/request")}
-                       "request"]])})
+                       "request"]]
+                  [:p [:a {:href (str "/request?foo=bar&num=123")}
+                       "request with parameters"]])})
 
 ; request-example
 (defn request-example [req]
