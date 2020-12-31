@@ -11,6 +11,8 @@
          ;; tailwindcss + hiccup = css + html
          rgm/tailwind-hiccup {:mvn/version "0.2.0"}
          ;; xml parsing
+         ;; also consider
+         ;; https://github.com/cloojure/tupelo
          org.clojure/data.xml {:mvn/version "0.2.0-alpha6"}}
  :aliases
  {:test    {:extra-paths ["test"]
