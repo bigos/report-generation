@@ -9,11 +9,14 @@
 
 ** running it
 
-   Unconfirmed way of running main
-
    #+begin_example
    clj -M -m cls.report-generation
    #+end_example
+   restart the above command and reload the page
+
+   and visit
+   http://localhost:3000/
+
 
 ** libraries
 

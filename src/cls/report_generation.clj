@@ -13,7 +13,9 @@
 (defn simple-body-page [req]
   {:status  200
    :headers {"Content-Type" "text/html"}
-   :body    "Hello World"})
+   :body    (html [:p "Hello World"]
+                  [:p [:a {:href (str "/request")}
+                       "request"]])})
 
 ; request-example
 (defn request-example [req]
