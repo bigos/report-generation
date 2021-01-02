@@ -47,15 +47,16 @@
                   dat]
                  ]]])}))
 
-(defn aux-file [num]
+(defn parsed-file [num]
   (let [xml-path  "/home/jacek/Desktop/LidlReports"
         xml-file (clojure.string/join [xml-path "/" (str num)])]
-     (slurp xml-file)))
+    (parse-str (slurp xml-file))))
 
 (defn read-xml [req]
   (let [params (get req :params)
         xml-path  "/home/jacek/Desktop/LidlReports"
         xml-file (clojure.string/join [xml-path "/" (get params :file)])]
+    (print (str xml-file "\n"))
     {:status  200
      :headers {"Content-Type" "text/html"}
      :body    (html
