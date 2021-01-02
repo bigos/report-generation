@@ -52,6 +52,17 @@
         xml-file (clojure.string/join [xml-path "/" (str num)])]
     (parse-str (slurp xml-file))))
 
+(defn clean-content [x]
+  (filter (fn [y] (not= (type y) java.lang.String)) (.content x)))
+
+(defn example-descent []
+  (-> (parsed-file 1366796)
+      clean-content
+      (nth 10) clean-content
+      (nth 0) clean-content
+      (nth 1) clean-content
+      (nth 0) .attrs))
+
 (defn read-xml [req]
   (let [params (get req :params)
         xml-path  "/home/jacek/Desktop/LidlReports"
