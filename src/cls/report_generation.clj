@@ -58,10 +58,10 @@
 (defn example-descent []
   (-> (parsed-file 1366796)
       clean-content
-      (nth 10) clean-content
-      (nth 0) clean-content
-      (nth 1) clean-content
-      (nth 0) .attrs))
+      (nth 7) clean-content
+      (nth 0)
+      .attrs
+      (get :customer_purchase_order)))
 
 (defn read-xml [req]
   (let [params (get req :params)
