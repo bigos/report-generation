@@ -7,7 +7,8 @@
             [clojure.pprint :as pp]
             [clojure.string :as str]
             [clojure.data.json :as json]
-            [clojure.data.xml :refer :all])
+            [clojure.data.xml :refer :all]
+            [clojure.zip])
   (:gen-class))
 
 (defn simple-body-page [req]
@@ -47,6 +48,7 @@
                   dat]
                  ]]])}))
 
+;;; read utils/SalXmlDoxument to see example of file parsing
 (defn parsed-file [num]
   (let [xml-path  "/home/jacek/Desktop/LidlReports"
         xml-file (clojure.string/join [xml-path "/" (str num)])]
