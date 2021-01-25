@@ -13,7 +13,8 @@
          ;; xml parsing
          ;; also consider
          ;; https://github.com/cloojure/tupelo
-         org.clojure/data.xml {:mvn/version "0.2.0-alpha6"}}
+         org.clojure/data.xml {:mvn/version "0.2.0-alpha6"}
+         libs/sal {:local/root "./libs/sal.jar"}}
  :aliases
  {:test    {:extra-paths ["test"]
             :extra-deps  {org.clojure/test.check {:mvn/version "1.0.0"}}}
